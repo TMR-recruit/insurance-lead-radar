@@ -1,4 +1,4 @@
-name: Telegram Test
+name: Naver Search Test
 
 on:
   workflow_dispatch:
@@ -11,7 +11,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run Telegram test
+      - name: Run Naver search test
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        run: python telegram_test.py
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: python naver_search_test.py
