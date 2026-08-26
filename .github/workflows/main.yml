@@ -1,19 +1,19 @@
-name: Naver Search Test
+name: Insurance Radar
 
 on:
   workflow_dispatch:
 
 jobs:
-  test:
+  radar:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run Naver search test
+      - name: Run insurance radar
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-        run: python naver_search_test.py
+        run: python insurance_radar.py
